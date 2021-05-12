@@ -17,4 +17,8 @@ export interface IPeople {
 export interface ITableProps {
   data: IPerson[];
   size: number;
+  loading: boolean;
+  nextPage: string | null;
+  previousPage: string | null;
+  handlePageChange: (page: number) => void;
 }

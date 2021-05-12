@@ -16,3 +16,20 @@ export const GET_PEOPLE = gql`
     }
   }
 `;
+
+export const CHANGE_PAGE = gql`
+  query ($page: Int!) {
+    nextPage(page: $page) {
+      count
+      next
+      previous
+      results {
+        name
+        height
+        mass
+        gender
+        homeworld
+      }
+    }
+  }
+`;

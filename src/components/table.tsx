@@ -1,14 +1,19 @@
-import React from "react";
 import { ITableProps, IPerson } from "../shared/types";
-import { DataGrid } from "@material-ui/data-grid";
+import { DataGrid, GridPageChangeParams } from "@material-ui/data-grid";
 
-export const Table = ({ data, size }: ITableProps) => {
+export const Table = ({
+  data,
+  size,
+  loading,
+  nextPage,
+  previousPage,
+  handlePageChange,
+}: ITableProps) => {
   const columns = [
     {
       field: "name",
       headerName: "Name",
       width: 200,
-      height: 150,
     },
     { field: "height", headerName: "Height", width: 200 },
     { field: "mass", headerName: "Mass", width: 200 },
@@ -22,9 +27,9 @@ export const Table = ({ data, size }: ITableProps) => {
 
   const rows = generateRows(data);
 
-  console.log("columns", columns);
-  console.log("rows", rows);
-  console.log("size", size);
+  const onPageChange = (props: GridPageChangeParams) => {
+    handlePageChange(props.page + 1);
+  };
 
   return (
     <div style={{ height: "400px", width: "100%" }}>
@@ -35,6 +40,9 @@ export const Table = ({ data, size }: ITableProps) => {
           columns={columns}
           pageSize={10}
           rowCount={size}
+          paginationMode="server"
+          onPageChange={onPageChange}
+          loading={loading}
         />
       )}
     </div>
