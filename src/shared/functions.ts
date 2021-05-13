@@ -1,11 +1,3 @@
-export const getPageFromURL = (url: string): string | null => {
-  console.log("url", url);
-  const urlParams = new URLSearchParams(url);
-  const page = urlParams.get("page");
-  console.log("page", page);
-  return page;
-};
-
 export const getParameterByName = (name: string, url: string) => {
   name = name.replace(/[\[\]]/g, "\\$&");
   var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),

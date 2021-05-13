@@ -5,8 +5,6 @@ export const Table = ({
   data,
   size,
   loading,
-  nextPage,
-  previousPage,
   handlePageChange,
 }: ITableProps) => {
   const columns = [
