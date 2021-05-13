@@ -8,20 +8,22 @@ import { Details } from "./pages/details";
 
 function App() {
   return (
-    <Router>
-      <Header />
-      <Switch>
-        <Route path="/search">
-          <Search />
-        </Route>
-        <Route path="/details">
-          <Details />
-        </Route>
-        <Route path="/">
-          <Homepage />
-        </Route>
-      </Switch>
-    </Router>
+    <div style={{ height: "100%" }}>
+      <Router>
+        <Header />
+        <Switch>
+          <Route path="/search">
+            <Search />
+          </Route>
+          <Route path="/details">
+            <Details />
+          </Route>
+          <Route path="/">
+            <Homepage />
+          </Route>
+        </Switch>
+      </Router>
+    </div>
   );
 }
 

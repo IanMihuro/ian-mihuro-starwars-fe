@@ -1,5 +1,13 @@
 import { ITableProps, IPerson } from "../shared/types";
 import { DataGrid, GridPageChangeParams } from "@material-ui/data-grid";
+import styled from "styled-components";
+
+const Container = styled.div`
+  margin: 60px 0;
+  width: 100%;
+  height: 600px;
+  min-height: 440px;
+`;
 
 export const Table = ({
   data,
@@ -16,7 +24,7 @@ export const Table = ({
     { field: "height", headerName: "Height", width: 200 },
     { field: "mass", headerName: "Mass", width: 200 },
     { field: "gender", headerName: "Gender", width: 200 },
-    { field: "homeworld", headerName: "Home World", width: 200 },
+    { field: "homeworld", headerName: "Home World", width: 250 },
   ];
 
   const generateRows = (data: IPerson[]): IPerson[] => {
@@ -30,7 +38,7 @@ export const Table = ({
   };
 
   return (
-    <div style={{ height: "400px", width: "100%" }}>
+    <Container>
       {rows && (
         <DataGrid
           getRowId={(row) => row.id}
@@ -43,6 +51,6 @@ export const Table = ({
           loading={loading}
         />
       )}
-    </div>
+    </Container>
   );
 };
