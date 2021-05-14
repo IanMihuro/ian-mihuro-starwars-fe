@@ -3,7 +3,7 @@ import { DataGrid, GridPageChangeParams } from "@material-ui/data-grid";
 import styled from "styled-components";
 
 const Container = styled.div`
-  margin: 60px 0;
+  margin: 0 0;
   width: 100%;
   height: 600px;
   min-height: 440px;

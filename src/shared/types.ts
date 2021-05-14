@@ -1,3 +1,5 @@
+import { ApolloError } from "@apollo/client/errors";
+
 export interface IPerson {
   id?: string;
   name: string;
@@ -14,9 +16,31 @@ export interface IPeople {
   results: IPerson[];
 }
 
+export interface IQueryProps {
+  data: IPerson[];
+  size: number;
+  loading: boolean;
+  error?: string;
+}
+
 export interface ITableProps {
   data: IPerson[];
   size: number;
   loading: boolean;
+  error?: string;
   handlePageChange: (page: number) => void;
+}
+
+export interface ISearchResults {
+  data: IPerson[];
+  size: number;
+  loading: boolean;
+  error?: ApolloError | undefined;
+}
+
+export interface ISearchResultItem {
+  person: IPerson;
+}
+export interface IErrorMessage {
+  message: ApolloError | undefined;
 }
