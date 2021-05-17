@@ -39,7 +39,7 @@ export const Search = () => {
       <SearchInputContainer>
         <TextField
           id="outlined-search"
-          label="Search field"
+          label="Search"
           type="search"
           variant="outlined"
           onChange={handleInputChange}

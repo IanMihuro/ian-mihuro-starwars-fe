@@ -1,6 +1,14 @@
+import { useContext } from "react";
 import { ITableProps, IPerson } from "../shared/types";
-import { DataGrid, GridPageChangeParams } from "@material-ui/data-grid";
+import {
+  DataGrid,
+  GridPageChangeParams,
+  GridRowParams,
+} from "@material-ui/data-grid";
 import styled from "styled-components";
+import { useHistory } from "react-router-dom";
+
+import { CharacterContext } from "../CharacterContext";
 
 const Container = styled.div`
   margin: 0 0;
@@ -15,6 +23,9 @@ export const Table = ({
   loading,
   handlePageChange,
 }: ITableProps) => {
+  const { setInfo } = useContext(CharacterContext);
+  let history = useHistory();
+
   const columns = [
     {
       field: "name",
@@ -37,6 +48,11 @@ export const Table = ({
     handlePageChange(props.page + 1);
   };
 
+  const handleRowClick = (param: GridRowParams) => {
+    setInfo(param.row);
+    history.push("/details");
+  };
+
   return (
     <Container>
       {rows && (
@@ -49,6 +65,7 @@ export const Table = ({
           paginationMode="server"
           onPageChange={onPageChange}
           loading={loading}
+          onRowClick={handleRowClick}
         />
       )}
     </Container>
