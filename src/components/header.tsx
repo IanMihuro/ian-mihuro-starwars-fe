@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 //Material-UI Imports
@@ -148,7 +148,7 @@ export const Header = () => {
         </div>
         <Divider />
         <List>
-          <CustomLink to="/">
+          <CustomLink to="/" onClick={handleDrawerClose}>
             <ListItem button>
               <ListItemIcon>
                 <HomeIcon />
@@ -156,7 +156,7 @@ export const Header = () => {
               <ListItemText primary={"Home"} />
             </ListItem>
           </CustomLink>
-          <CustomLink to="/search">
+          <CustomLink to="/search" onClick={handleDrawerClose}>
             <ListItem button>
               <ListItemIcon>
                 <SearchIcon />

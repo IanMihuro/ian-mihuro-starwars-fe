@@ -7,14 +7,12 @@ import {
 } from "@material-ui/data-grid";
 import styled from "styled-components";
 import { useHistory } from "react-router-dom";
-
 import { CharacterContext } from "../CharacterContext";
 
 const Container = styled.div`
-  margin: 0 0;
-  width: 100%;
+  margin: 10px 10px;
+  width: 85%;
   height: 600px;
-  min-height: 440px;
 `;
 
 export const Table = ({

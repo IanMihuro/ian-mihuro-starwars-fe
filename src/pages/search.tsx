@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import TextField from "@material-ui/core/TextField";
 import { SEARCH_PEOPLE } from "../shared/queries";
@@ -7,35 +7,30 @@ import { SearchList } from "../components/SearchList";
 
 const SearchInputContainer = styled.div`
   margin: 10px 10px;
+  width: 350px;
+`;
+
+const Container = styled.div`
+  max-width: 550px;
+  margin: 0 10px;
 `;
 
 export const Search = () => {
   const [query, setQuery] = useState("");
+  const [page, setPage] = useState(1);
   const { data, loading, error } = useQuery(SEARCH_PEOPLE, {
     variables: {
       name: query,
+      page: page,
     },
   });
 
-  const memoizedHandleSearch = useCallback(() => {
-    console.log("data", data.person);
-  }, [data]);
-
   const handleInputChange = (input: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = input.target;
-    setQuery(value);
+    setTimeout(() => setQuery(value), 1500);
   };
-
-  useEffect(() => {
-    let debounce: ReturnType<typeof setTimeout>;
-
-    if (query !== "") {
-      debounce = setTimeout(memoizedHandleSearch, 3000);
-    }
-    return () => clearTimeout(debounce);
-  }, [query, memoizedHandleSearch]);
   return (
-    <div>
+    <Container>
       <SearchInputContainer>
         <TextField
           id="outlined-search"
@@ -51,8 +46,10 @@ export const Search = () => {
           loading={loading}
           size={data?.person?.count}
           error={error}
+          changePage={setPage}
+          page={page}
         />
       }
-    </div>
+    </Container>
   );
 };

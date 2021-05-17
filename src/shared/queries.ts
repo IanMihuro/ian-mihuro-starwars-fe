@@ -18,8 +18,8 @@ export const GET_PEOPLE = gql`
 `;
 
 export const SEARCH_PEOPLE = gql`
-  query ($name: String!) {
-    person(name: $name) {
+  query ($name: String!, $page: Int!) {
+    person(name: $name, page: $page) {
       count
       next
       previous

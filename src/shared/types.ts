@@ -36,6 +36,8 @@ export interface ISearchResults {
   size: number;
   loading: boolean;
   error?: ApolloError | undefined;
+  changePage: (page: number) => void;
+  page: number;
 }
 
 export interface ISearchResultItem {
