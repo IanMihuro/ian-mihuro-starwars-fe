@@ -20,6 +20,7 @@ const Row = styled.div`
   display: flex;
   align-content: space-between;
   margin: 5px 0;
+  flex-wrap: wrap;
 `;
 
 export const Details = () => {
@@ -40,16 +41,27 @@ export const Details = () => {
       <Row>
         <InnerContainer>
           <Row>
-            <img src={`https://via.placeholder.com/150`} alt="character" />
+            <img src={"https://via.placeholder.com/150"} alt="character" />
           </Row>
         </InnerContainer>
 
         <InnerContainer>
-          <Row>Name: {info.name}</Row>
-          <Row>Height: {info.height}</Row>
-          <Row>Mass {info.mass}</Row>
-          <Row>Gender: {info.gender}</Row>
-          <Row>Home World: {info.homeworld}</Row>
+          <Row>
+            <strong>Name:</strong> &nbsp; {info.name}
+          </Row>
+          <Row>
+            <strong>Height:</strong>&nbsp; {info.height}
+          </Row>
+          <Row>
+            <strong>Mass:</strong>&nbsp; {info.mass}
+          </Row>
+          <Row>
+            <strong>Gender: </strong>&nbsp;
+            {info.gender}
+          </Row>
+          <Row>
+            <strong>Home World:</strong>&nbsp; {info.homeworld}
+          </Row>
         </InnerContainer>
       </Row>
     </Container>

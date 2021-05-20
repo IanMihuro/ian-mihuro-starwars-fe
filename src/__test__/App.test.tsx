@@ -109,5 +109,5 @@ it("renders the details page with context storage data", async () => {
     </CharacterContext.Provider>
   );
 
-  expect(getByText("Name: Luke Skywalker")).toBeInTheDocument();
+  expect(getByText("Luke Skywalker")).toBeInTheDocument();
 });

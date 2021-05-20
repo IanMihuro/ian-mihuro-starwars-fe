@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-//Material-UI Imports
 import clsx from "clsx";
 import {
   makeStyles,
@@ -124,7 +123,7 @@ export const Header = () => {
             <MenuIcon />
           </IconButton>
           <Typography variant="h3" noWrap>
-            Star Wars App
+            Starwars
           </Typography>
         </Toolbar>
       </AppBar>

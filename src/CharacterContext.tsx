@@ -6,7 +6,6 @@ let reducer = (info: IPerson, newInfo: IPerson) => {
 };
 
 const initialState: any = {
-  //TODO: revisit
   name: "",
   height: "",
   mass: "",

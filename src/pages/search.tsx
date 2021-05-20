@@ -6,13 +6,16 @@ import { useQuery } from "@apollo/client";
 import { SearchList } from "../components/SearchList";
 
 const SearchInputContainer = styled.div`
-  margin: 10px 10px;
+  margin: 10px 0px;
   width: 350px;
 `;
 
 const Container = styled.div`
-  max-width: 550px;
+  width: 100%;
   margin: 0 10px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 `;
 
 export const Search = () => {

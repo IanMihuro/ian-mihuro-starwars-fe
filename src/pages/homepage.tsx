@@ -18,10 +18,11 @@ export const Homepage = () => {
   };
 
   useEffect(() => {
-    if (data !== undefined) {
+    if (data) {
       const newData = { ...people, ...data.people };
       setPeople(newData);
     }
+    // eslint-disable-next-line
   }, [data, setPeople]);
 
   return (

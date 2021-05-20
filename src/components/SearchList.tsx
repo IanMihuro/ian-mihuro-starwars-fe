@@ -7,6 +7,15 @@ import { SearchItem } from "./SearchItem";
 
 import List from "@material-ui/core/List";
 import Divider from "@material-ui/core/Divider";
+import styled from "styled-components";
+
+const Container = styled.div`
+  width: 100%;
+  margin: 0 0px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+`;
 
 export const SearchList = ({
   data,
@@ -38,12 +47,12 @@ export const SearchList = ({
   };
 
   return (
-    <>
+    <Container>
       {error && handleErrorMessage(error)}
       {loading && <>Loading...</>}
       {size && (
         <>
-          <h4>{size} results</h4>
+          <h4>{size} result(s)</h4>
           <Divider />
         </>
       )}
@@ -60,6 +69,6 @@ export const SearchList = ({
           onChange={handleChangePage}
         />
       )}
-    </>
+    </Container>
   );
 };
