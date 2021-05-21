@@ -1,10 +1,14 @@
-# Getting Started with Create React App
+# STARWARS APP CHALLENGE FOR SOVATECH BY IAN MIHURO
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is my presentation for the Sovatech fullstack takehome challenge.
 
 ## Available Scripts
 
 In the project directory, you can run:
+
+## Prerequisite
+
+Create a `env.development.local` file in the root directory and add the following environmental variable to run it locally. `REACT_APP_API_EP=http://localhost:4000/graphql`
 
 ### `yarn start`
 
