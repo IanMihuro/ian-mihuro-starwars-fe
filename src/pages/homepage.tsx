@@ -6,7 +6,7 @@ import { Table } from "../components/table";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import styled from "styled-components";
 
-const SpinnerContainer = styled.div`
+const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -36,12 +36,8 @@ export const Homepage = () => {
   }, [data, setPeople]);
 
   return (
-    <div>
-      {loading && people === undefined && (
-        <SpinnerContainer>
-          <CircularProgress />
-        </SpinnerContainer>
-      )}
+    <Container>
+      {loading && people === undefined && <CircularProgress />}
       {people && (
         <Table
           size={people.count}
@@ -50,6 +46,6 @@ export const Homepage = () => {
           handlePageChange={HandlePageChange}
         />
       )}
-    </div>
+    </Container>
   );
 };

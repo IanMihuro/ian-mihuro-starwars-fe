@@ -8,7 +8,7 @@ import { Search } from "./pages/search";
 import { Details } from "./pages/details";
 
 const Container = styled.div`
-  margin: 80px 0px;
+  margin: 100px 0px;
 `;
 
 function App() {
